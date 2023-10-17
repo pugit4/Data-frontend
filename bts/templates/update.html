@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="style=device-width, initial-scale=1">
+    <title>update list</title>
+<style>
+input {
+    border-radius: 5px;
+    padding: 12px 16px;
+    margin: 15px;
+}
+
+a {
+    border: 2px solid black;
+    padding: 4px 8px;
+}
+</style>
+</head>
+<body>
+
+<h2>Update the details</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="fname" placeholder="Enter firstname.." style="width:150px;" value="{{ team.firstname }}">
+    <br>
+
+    <input type="text" name="lname" placeholder="Enter lastname.." style="width:150px;" value="{{ team.lastname }}">
+    <br>
+
+    <input type="number" name="age" placeholder="Enter age.." style="width:150px;" value="{{ team.age }}">
+    <br>
+
+    <input type="text" name="singer" placeholder="Enter singer type.." style="width:150px;" value="{{ team.singer }}">
+    <br><br>
+
+    <button type="submit" value="submit">Update</button>
+
+</form>
+
+    <br>
+    <a href="{% url "home" %}" role="button">Home</a>
+  
+</body>
+</html>
